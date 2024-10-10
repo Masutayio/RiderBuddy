@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RiderBuddy - Recherche</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hamburger-menu {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            cursor: pointer;
+        }
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 5px 0;
+        }
+
+        nav {
+            display: none;
+            background-color: #333;
+            padding: 10px;
+            position: absolute;
+            top: 50px;
+            left: 10px;
+            border-radius: 5px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin: 10px 0;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+
+        select {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .results {
+            margin-top: 20px;
+        }
+
+        .user-result {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .user-result strong {
+            color: #007bff;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Recherche de motards - RiderBuddy</h1>
+
+        <!-- Menu Hamburger -->
+        <div class="hamburger-menu" id="hamburgerMenu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
+        <!-- Navigation Hamburger -->
+        <nav id="navMenu">
+            <ul>
+                <li><a href="home.html">Accueil</a></li>
+                <li><a href="profile.html">Mon Profil</a></li>
+                <li><a href="index.html">Déconnexion</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Rechercher des motards</h1>
+
+        <!-- Formulaire de recherche -->
+        <form id="searchForm">
+            <label for="departement">Département :</label>
+            <select id="departement" name="departement">
+                <option value="">Tous les départements</option>
+<option value="01">Ain</option>
+                <option value="02">Aisne</option>
+                <option value="03">Allier</option>
+                <option value="04">Alpes-de-Haute-Provence</option>
+                <option value="05">Hautes-Alpes</option>
+                <option value="06">Alpes-Maritimes</option>
+                <option value="07">Ardèche</option>
+                <option value="08">Ardennes</option>
+                <option value="09">Ariège</option>
+                <option value="10">Aube</option>
+                <option value="11">Aude</option>
+                <option value="12">Aveyron</option>
+                <option value="13">Bouches-du-Rhône</option>
+                <option value="14">Calvados</option>
+                <option value="15">Cantal</option>
+                <option value="16">Charente</option>
+                <option value="17">Charente-Maritime</option>
+                <option value="18">Cher</option>
+                <option value="19">Corrèze</option>
+                <option value="20">Corse-du-Sud</option>
+                <option value="21">Côte-d'Or</option>
+                <option value="22">Côtes-d'Armor</option>
+                <option value="23">Creuse</option>
+                <option value="24">Dordogne</option>
+                <option value="25">Doubs</option>
+                <option value="26">Drôme</option>
+                <option value="27">Eure</option>
+                <option value="28">Eure-et-Loir</option>
+                <option value="29">Finistère</option>
+                <option value="30">Gard</option>
+                <option value="31">Haute-Garonne</option>
+                <option value="32">Gers</option>
+                <option value="33">Gironde</option>
+                <option value="34">Hérault</option>
+                <option value="35">Ille-et-Vilaine</option>
+                <option value="36">Indre</option>
+                <option value="37">Indre-et-Loire</option>
+                <option value="38">Isère</option>
+                <option value="39">Jura</option>
+                <option value="40">Landes</option>
+                <option value="41">Loir-et-Cher</option>
+                <option value="42">Loire</option>
+                <option value="43">Haute-Loire</option>
+                <option value="44">Loire-Atlantique</option>
+                <option value="45">Loiret</option>
+                <option value="46">Lot</option>
+                <option value="47">Lot-et-Garonne</option>
+                <option value="48">Lozère</option>
+                <option value="49">Maine-et-Loire</option>
+                <option value="50">Manche</option>
+                <option value="51">Marne</option>
+                <option value="52">Haute-Marne</option>
+                <option value="53">Mayenne</option>
+                <option value="54">Meurthe-et-Moselle</option>
+                <option value="55">Meuse</option>
+                <option value="56">Morbihan</option>
+                <option value="57">Moselle</option>
+                <option value="58">Nièvre</option>
+                <option value="59">Nord</option>
+                <option value="60">Oise</option>
+                <option value="61">Orne</option>
+                <option value="62">Pas-de-Calais</option>
+                <option value="63">Puy-de-Dôme</option>
+                <option value="64">Pyrénées-Atlantiques</option>
+                <option value="65">Hautes-Pyrénées</option>
+                <option value="66">Pyrénées-Orientales</option>
+                <option value="67">Bas-Rhin</option>
+                <option value="68">Haut-Rhin</option>
+                <option value="69">Rhône</option>
+                <option value="70">Haute-Saône</option>
+                <option value="71">Saône-et-Loire</option>
+                <option value="72">Sarthe</option>
+                <option value="73">Savoie</option>
+                <option value="74">Haute-Savoie</option>
+                <option value="75">Paris</option>
+                <option value="76">Seine-Maritime</option>
+                <option value="77">Seine-et-Marne</option>
+                <option value="78">Yvelines</option>
+                <option value="79">Deux-Sèvres</option>
+                <option value="80">Somme</option>
+                <option value="81">Tarn</option>
+                <option value="82">Tarn-et-Garonne</option>
+                <option value="83">Var</option>
+                <option value="84">Vaucluse</option>
+                <option value="85">Vendée</option>
+                <option value="86">Vienne</option>
+                <option value="87">Haute-Vienne</option>
+                <option value="88">Vosges</option>
+                <option value="89">Yonne</option>
+                <option value="90">Territoire de Belfort</option>
+                <option value="91">Essonne</option>
+                <option value="92">Hauts-de-Seine</option>
+                <option value="93">Seine-Saint-Denis</option>
+                <option value="94">Val-de-Marne</option>
+                <option value="95">Val-d'Oise</option>
+                <option value="971">Guadeloupe</option>
+                <option value="972">Martinique</option>
+                <option value="973">Guyane</option>
+                <option value="974">La Réunion</option>
+                <option value="976">Mayotte</option>
+                <!-- Ajouter d'autres départements ici -->
+            </select>
+
+            <label for="ageRange">Tranche d'âge :</label>
+            <select id="ageRange" name="ageRange">
+                <option value="">Toutes les tranches d'âge</option>
+                <option value="18-25">18-25 ans</option>
+                <option value="26-35">26-35 ans</option>
+                <option value="36-45">36-45 ans</option>
+                <option value="46-60">46-60 ans</option>
+                <option value="61+">61 ans et plus</option>
+            </select>
+
+            <label for="styleConduite">Style de conduite :</label>
+            <select id="styleConduite" name="styleConduite">
+                <option value="">Tous les styles</option>
+                <option value="arsouille">Arsouille</option>
+                <option value="balade">Balade</option>
+                <option value="decouverte">Découverte de paysage</option>
+            </select>
+
+            <label for="styleMoto">Style de moto :</label>
+            <select id="styleMoto" name="styleMoto">
+                <option value="">Tous les styles de moto</option>
+                <option value="sportive">Sportive</option>
+                <option value="trail">Trail</option>
+                <option value="routiere">Routière</option>
+                <option value="gt">GT</option>
+                <option value="roadster">Roadster</option>
+            </select>
+
+            <button type="submit">Rechercher</button>
+        </form>
+
+        <!-- Section des résultats de recherche -->
+        <div class="results" id="results">
+            <!-- Les résultats de recherche s'afficheront ici -->
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 RiderBuddy. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        const hamburgerMenu = document.getElementById('hamburgerMenu');
+        const navMenu = document.getElementById('navMenu');
+
+        // Affiche ou cache le menu lorsque le hamburger est cliqué
+        hamburgerMenu.addEventListener('click', function() {
+            navMenu.style.display = navMenu.style.display === 'block' ? 'none' : 'block';
+        });
+
+        // Données factices des utilisateurs (simule la base de données)
+        const users = [
+            { username: "biker123", age: 29, departement: "75", styleConduite: "balade", styleMoto: "roadster" },
+            { username: "speedyRider", age: 35, departement: "13", styleConduite: "arsouille", styleMoto: "sportive" },
+            { username: "trailLover", age: 42, departement: "69", styleConduite: "decouverte", styleMoto: "trail" },
+            // Ajoute d'autres utilisateurs ici
+        ];
+
+        // Fonction de recherche
+        document.getElementById("searchForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Empêche la soumission normale du formulaire
+
+            const departement = document.getElementById("departement").value;
+            const ageRange = document.getElementById("ageRange").value;
+            const styleConduite = document.getElementById("styleConduite").value;
+            const styleMoto = document.getElementById("styleMoto").value;
+
+            const filteredUsers = users.filter(user => {
+                return (
+                    (departement === "" || user.departement === departement) &&
+                    (ageRange === "" || isInAgeRange(user.age, ageRange)) &&
+                    (styleConduite === "" || user.styleConduite === styleConduite) &&
+                    (styleMoto === "" || user.styleMoto === styleMoto)
+                );
+            });
+
+            displayResults(filteredUsers);
+        });
+
+        // Fonction pour vérifier si un utilisateur est dans la tranche d'âge sélectionnée
+        function isInAgeRange(age, ageRange) {
+            if (ageRange === "18-25") return age >= 18 && age <= 25;
+            if (ageRange === "26-35") return age >= 26 && age <= 35;
+            if (ageRange === "36-45") return age >= 36 && age <= 45;
+            if (ageRange === "46+") return age >= 46;
+            return false;
+        }
+
+        // Fonction pour afficher les résultats
+        function displayResults(results) {
+            const resultsDiv = document.getElementById("results");
+            resultsDiv.innerHTML = ""; // Réinitialise les résultats
+
+            if (results.length === 0) {
+                resultsDiv.innerHTML = "<p>Aucun motard trouvé.</p>";
+                return;
+            }
+
+            results.forEach(user => {
+                const userDiv = document.createElement("div");
+                userDiv.className = "user-result";
+                userDiv.innerHTML = `<strong>${user.username}</strong><br>
+                                     Âge: ${user.age} ans<br>
+                                     Département: ${user.departement}<br>
+                                     Style de conduite: ${user.styleConduite}<br>
+                                     Style de moto: ${user.styleMoto}`;
+                resultsDiv.appendChild(userDiv);
+            });
+        }
+    </script>
+</body>
+</html>

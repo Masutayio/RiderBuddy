@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RiderBuddy - Accueil</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hamburger-menu {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            cursor: pointer;
+        }
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 5px 0;
+        }
+
+        nav {
+            display: none;
+            background-color: #333;
+            padding: 10px;
+            position: absolute;
+            top: 50px;
+            left: 10px;
+            border-radius: 5px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin: 10px 0;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .container {
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #555;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .gallery img {
+            width: 150px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 2px solid #007bff;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bienvenue sur RiderBuddy</h1>
+
+        <!-- Menu Hamburger -->
+        <div class="hamburger-menu" id="hamburgerMenu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
+        <!-- Navigation Hamburger -->
+        <nav id="navMenu">
+            <ul>
+                <li><a href="profile.html">Mon Profil</a></li>
+                <li><a href="search.html">Recherche</a></li>
+                <li><a href="index.html">Déconnexion</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Découvrez de nouveaux horizons avec RiderBuddy !</h1>
+        <p>Rencontrez des passionnés de moto pour des balades, des découvertes et bien plus. Rejoignez une communauté de riders, choisissez vos itinéraires et partagez des moments mémorables !</p>
+
+        <!-- Galerie de photos -->
+        <div class="gallery">
+            <img src="photo/logo riderbunny.jpeg" alt="Photo 1">
+            <img src="photo/signal-2024-10-10-154425_002.jpeg" alt="Photo 2">
+
+        </div>
+
+        <p>Prêt à partir pour la prochaine aventure ? Sélectionnez votre profil, explorez de nouveaux riders, ou découvrez de nouveaux itinéraires dès aujourd'hui !</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 RiderBuddy. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        const hamburgerMenu = document.getElementById('hamburgerMenu');
+        const navMenu = document.getElementById('navMenu');
+
+        // Affiche ou cache le menu lorsque le hamburger est cliqué
+        hamburgerMenu.addEventListener('click', function() {
+            navMenu.style.display = navMenu.style.display === 'block' ? 'none' : 'block';
+        });
+    </script>
+</body>
+</html>
